@@ -19,9 +19,13 @@ export const keywords: string[] = [
   'frontend',
   'front-end',
   'react',
-  'vue',
-  'angular',
-  // Adicione mais palavras-chave aqui
+  'javascript',
+  'typescript',
+  'fullstack',
+  'full-stack',
+  'nodejs',
+  'node.js',
+  'reactss'
 ];
 
 // Configurações de busca
