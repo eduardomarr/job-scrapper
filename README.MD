@@ -54,15 +54,10 @@ Edite `src/config/jobSites.ts`:
 ```typescript
 export const jobSites: JobSite[] = [
   {
-    name: 'Visa/Pismo',
-    url: 'https://careers.smartrecruiters.com/Visa/careers-at-pismo',
-    type: 'smartrecruiters'
+    name: "Sua Empresa",
+    url: "https://empresa.com/carreiras",
+    type: "custom", // usa scraper genérico
   },
-  {
-    name: 'Sua Empresa',
-    url: 'https://empresa.com/carreiras',
-    type: 'custom'  // usa scraper genérico
-  }
 ];
 ```
 
@@ -72,13 +67,13 @@ Edite `src/config/jobSites.ts`:
 
 ```typescript
 export const keywords: string[] = [
-  'frontend',
-  'front-end',
-  'react',
-  'vue',
-  'angular',
-  'javascript',
-  'typescript'
+  "frontend",
+  "front-end",
+  "react",
+  "vue",
+  "angular",
+  "javascript",
+  "typescript",
 ];
 ```
 
@@ -117,12 +112,15 @@ npm run type-check
 ## 📡 API Endpoints
 
 ### GET /
+
 Health check do serviço
 
 ### GET /config
+
 Retorna a configuração atual (sites, keywords, cron)
 
 ### POST /check-now
+
 Dispara uma verificação manual imediatamente
 
 ```bash
@@ -145,6 +143,7 @@ O formato do cron segue o padrão Unix:
 ```
 
 Exemplos:
+
 - `0 9 * * 1` - Segunda-feira às 9h
 - `0 9 * * 1-5` - Segunda a sexta às 9h
 - `0 */6 * * *` - A cada 6 horas
@@ -203,6 +202,7 @@ async scrapeLinkedIn(url: string): Promise<Job[]> {
 ## 📧 Notificações
 
 O sistema suporta:
+
 - ✅ Email (via Nodemailer)
 - ✅ Console/Logs
 - 🔜 Slack (adicione conforme necessário)
@@ -212,16 +212,19 @@ O sistema suporta:
 ## 🐛 Troubleshooting
 
 ### Email não está sendo enviado
+
 - Verifique se as credenciais estão corretas no `.env`
 - Para Gmail, use uma senha de app, não a senha normal
 - Verifique se a autenticação de 2 fatores está ativada
 
 ### Scraper não encontra vagas
+
 - Execute `npm run check` para ver os logs detalhados
 - O HTML do site pode ter mudado - atualize os seletores
 - Alguns sites podem bloquear scrapers - considere usar APIs oficiais
 
 ### Cron não está executando
+
 - Verifique o formato do `CRON_SCHEDULE` no `.env`
 - Certifique-se de que o servidor está rodando continuamente
 
