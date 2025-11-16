@@ -14,7 +14,6 @@ const fastify = Fastify({
 
 // Configuração do cron job (padrão: toda segunda às 9h)
 const cronSchedule = process.env.CRON_SCHEDULE || CronPeriod.WEEKLY;
-//TESTE
 
 // Agenda a verificação periódica
 cron.schedule(cronSchedule, () => {
