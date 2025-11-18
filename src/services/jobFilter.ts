@@ -1,20 +1,27 @@
-import { keywords, searchConfig } from '../config/jobSites.js';
-import type { Job, MatchedJob } from '../types/index.js';
+import { keywords, searchConfig } from "../config/jobSites.js";
+import type { Job, MatchedJob } from "../types/index.js";
 
 export class JobFilter {
   matchesKeyword(jobTitle: string, keyword: string): boolean {
-    const title = searchConfig.caseSensitive ? jobTitle : jobTitle.toLowerCase();
+    const title = searchConfig.caseSensitive
+      ? jobTitle
+      : jobTitle.toLowerCase();
     const key = searchConfig.caseSensitive ? keyword : keyword.toLowerCase();
 
     if (searchConfig.matchWholeWord) {
-      const regex = new RegExp(`\\b${key}\\b`, 'i');
+      const regex = new RegExp(`\\b${key}\\b`, "i");
       return regex.test(title);
     }
 
     return title.includes(key);
   }
 
-  filterJobs(jobs: Job[], customKeywords: string[] | null = null): MatchedJob[] {
+  filterJobs(
+    jobs: Job[],
+    customKeywords: string[] | null = null,
+  ): MatchedJob[] {
+    if (jobs.length === 0) return [];
+
     const keywordsToUse = customKeywords || keywords;
     const matchedJobs: MatchedJob[] = [];
 
@@ -23,7 +30,7 @@ export class JobFilter {
         if (this.matchesKeyword(job.title, keyword)) {
           matchedJobs.push({
             ...job,
-            matchedKeyword: keyword
+            matchedKeyword: keyword,
           });
           break; // Evita duplicatas se múltiplas keywords fizerem match
         }
