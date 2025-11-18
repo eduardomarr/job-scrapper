@@ -12,7 +12,7 @@ export interface MatchedJob extends Job {
 export interface JobSite {
   name: string;
   url: string;
-  type: 'smartrecruiters' | 'custom';
+  type: "smartrecruiters" | "custom" | "htmlDOM";
 }
 
 export interface SearchConfig {

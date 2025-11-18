@@ -7,21 +7,21 @@ export const jobSites: JobSite[] = [
     url: "https://careers.smartrecruiters.com/Visa/careers-at-pismo",
     type: "smartrecruiters",
   },
-  {
-    name: "Quinto andar",
-    url: "https://carreiras.quintoandar.com.br/vagas-abertas/",
-    type: "custom",
-  },
+  // {
+  //   name: "Quinto andar",
+  //   url: "https://carreiras.quintoandar.com.br/vagas-abertas/",
+  //   type: "htmlDOM",
+  // },
   {
     name: "Ifood",
     url: "https://carreiras.ifood.com.br/jobs/",
-    type: "smartrecruiters",
+    type: "htmlDOM",
   },
-  {
-    name: "Nubank",
-    url: "https://picpay.com/oportunidades-de-emprego-e-carreiras/central-de-vagas",
-    type: "smartrecruiters",
-  },
+  // {
+  //   name: "Picpay",
+  //   url: "https://picpay.com/oportunidades-de-emprego-e-carreiras/central-de-vagas",
+  //   type: "htmlDOM",
+  // },
 ];
 
 export const keywords: string[] = [
@@ -32,11 +32,11 @@ export const keywords: string[] = [
   "typescript",
   "fullstack",
   "full-stack",
+  "full stack",
   "nodejs",
   "node.js",
   "reactjs",
   "react.js",
-  "staff",
 ];
 
 // Configurações de busca

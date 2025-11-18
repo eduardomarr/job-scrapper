@@ -12,11 +12,12 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
+    "cheerio": "^1.1.2",
     "dotenv": "^16.3.1",
     "fastify": "^4.25.2",
     "node-cron": "^3.0.3",
-    "nodemailer": "^6.9.8"
+    "nodemailer": "^6.9.8",
+    "puppeteer": "^24.30.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
